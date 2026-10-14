@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BugHunter AI | Website Scanner</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header class="topbar">
+        <div class="brand"><span class="logo">B</span> BugHunter <span class="ai">AI</span></div>
+        <span class="status"><span class="dot"></span> Scanner Dashboard</span>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <p class="eyebrow">INTELLIGENT WEBSITE TESTING</p>
+            <h1>Find bugs before<br><span>your users do.</span></h1>
+            <p class="subtitle">Scan a website and inspect its HTTP response for potential issues.</p>
+        </section>
+
+        <section class="panel">
+            <label for="url">Website URL</label>
+            <div class="scan-form">
+                <input id="url" type="text" placeholder="https://example.com">
+                <button id="scanBtn" onclick="scanWebsite()">Start Scan <span>→</span></button>
+                <button id="browserTestBtn" onclick="runBrowserTest()">Browser Test</button>
+            </div>
+            <p class="hint">Only scan websites you own or have permission to test.</p>
+            <div id="progress" class="progress hidden">Scanning website...</div>
+            <div id="message" role="status"></div>
+        </section>
+
+        <section class="stats">
+            <article class="stat-card">
+                <p>HTTP STATUS</p>
+                <h2 id="httpStatus">—</h2>
+                <span>Latest scan</span>
+            </article>
+            <article class="stat-card">
+                <p>ISSUES FOUND</p>
+                <h2 id="issueCount">—</h2>
+                <span>HTTP status findings</span>
+            </article>
+            <article class="stat-card">
+                <p>SCAN RESULT</p>
+                <h2 id="scanResult">Ready</h2>
+                <span>Current scan</span>
+            </article>
+        </section>
+
+        <section class="panel results">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">REPORT</p>
+                    <h2>Scan findings</h2>
+                </div>
+                <span class="tag">HTTP CHECK</span>
+            </div>
+            <div id="findings" class="empty">
+                Enter an authorized website URL above to begin.
+            </div>
+        </section>
+
+        <footer>BugHunter AI · Website diagnostics dashboard</footer>
+    </main>
+    <script src="/static/script.js"></script>
+</body>
+</html>
